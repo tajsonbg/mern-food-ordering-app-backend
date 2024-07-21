@@ -7,6 +7,22 @@ const STRIPE = new Stripe(process.env.STRIPE_API_KEY as string);
 const FRONTEND_URL = process.env.FRONTEND_URL as string;
 const STRIPE_ENDPOINT_SECRET = process.env.STRIPE_WEBHOOK_SECRET as string;
 
+const getMyOrders = async (req: Request, res: Response) => {
+  try {
+    const orders = await Order.find({ user: req.userId })
+      .populate("restaurant")
+      .populate("user");
+    if (!orders) {
+      return res.status(404).json({ message: "Orders not found" });
+    }
+
+    res.json(orders);
+  } catch (error) {
+    console.log(error, "error");
+    res.status(400).json({});
+  }
+};
+
 type CheckoutSessionRequest = {
   cartItems: {
     menuItemId: string;
@@ -160,6 +176,7 @@ const createSession = async (
 };
 
 export default {
+  getMyOrders,
   createCheckoutSession,
   stripeWebhookHandler,
 };
