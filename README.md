@@ -4,11 +4,8 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Tech Stack and Important Dependencies](#tech-stack-and-important-dependencies)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Setup Instructions](#setup-instructions)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ### Introduction
 
@@ -138,6 +135,89 @@ After you complete step 5, u will end up on this page on next screenshot and u w
 Step 6:
 Grab your Strpe webhook secret from here for local machine.
 ![image](https://github.com/user-attachments/assets/8d17562a-213d-4cb6-8edc-3510793f7bdd)
+
+
+After that are set to run your project on your local machine via next command:
+```bash
+npm run dev
+```
+
+### Project Structure
+
+The project is organized into several directories and files to maintain a clean and manageable codebase. Below is an overview of the project structure:
+
+```plaintext
+mern-food-ordering-app-backend/
+├── src/
+│   ├── controllers/
+│   │   ├── MyRestaurantController.ts
+│   │   ├── MyUserController.ts
+│   │   ├── OrderController.ts
+│   │   ├── RestaurantController.ts
+│   ├── middleware/
+│   │   ├── auth.ts
+│   │   ├── validation.ts
+│   ├── models/
+│   │   ├── order.ts
+│   │   ├── restaurant.ts
+│   │   ├── user.ts
+│   ├── routes/
+│   │   ├── MyRestaurantRoute.ts
+│   │   ├── MyUserRoute.ts
+│   │   ├── OrderRoute.ts
+│   │   ├── RestaurantRoute.ts
+│   │   ├── index.ts
+├── .env
+├── .env.example
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.json
+```
+
+#### `src/controllers/`
+This directory contains the controller files, which handle the logic for different routes.
+
+- **MyRestaurantController.ts**: Manages restaurant-related operations.
+- **MyUserController.ts**: Manages user-related operations.
+- **OrderController.ts**: Handles operations related to orders.
+- **RestaurantController.ts**: Manages additional restaurant-related operations.
+
+#### `src/middleware/`
+Middleware functions for authentication and validation.
+
+- **auth.ts**: Middleware for handling authentication.
+- **validation.ts**: Middleware for validating request data.
+
+#### `src/models/`
+Contains Mongoose models for interacting with MongoDB collections.
+
+- **order.ts**: Defines the schema for orders.
+- **restaurant.ts**: Defines the schema for restaurants.
+- **user.ts**: Defines the schema for users.
+
+#### `src/routes/`
+Defines the routes for the application.
+
+- **MyRestaurantRoute.ts**: Routes for managing restaurant-related data.
+- **MyUserRoute.ts**: Routes for managing user-related data.
+- **OrderRoute.ts**: Routes for managing orders.
+- **RestaurantRoute.ts**: Routes for exploring restaurant data.
+- **index.ts**: Main file to combine all the routes.
+
+#### Root Files
+- **.env**: Environment variables for local development (not included in version control).
+- **.env.example**: Example environment variables file to show required variables.
+- **.gitignore**: Specifies files and directories to be ignored by Git.
+- **package-lock.json**: Automatically generated file to lock the versions of dependencies.
+- **package.json**: Lists the project dependencies and scripts.
+- **README.md**: The main documentation file for the project.
+- **tsconfig.json**: TypeScript configuration file.
+
+This structure ensures that the project is modular, easy to navigate, and maintainable. Each major feature or functionality is encapsulated in its directory, making the codebase more organized and scalable.
+
+
 
 
 
