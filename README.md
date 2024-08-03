@@ -59,7 +59,10 @@ Change to the project directory using the following command:
 ```bash
 cd mern-food-ordering-app-backend
 ```
-
+Optionally you can run this command to open root folder inside vsc
+```bash
+code .
+```
 ### Install Dependencies
 Install the required dependencies using npm or Yarn:
 ```bash
@@ -105,7 +108,11 @@ STRIPE_WEBHOOK_SECRET =whsec_test123test123test123test123test123test123test123te
 ```
 
 Step 1:
-Go to https://auth0.com/ Create account or login with existing one, go to account, Applications, APIs, then create API, and from now follow screenshots and grab components data and put them in .env
+Follow instructions from following link (official documentation from mongodb)
+https://www.mongodb.com/resources/products/fundamentals/mongodb-connection-string#:~:text=How%20to%20get%20your%20MongoDB,connection%20string%20for%20your%20cluster.
+Get connection string and put it inside .env MONGODB_CONNECTION_STRING
+
+Then go to https://auth0.com/ Create account or login with existing one, go to account, Applications, APIs, then create API, and from now follow screenshots and grab components data and put them in .env
 
 ![image](https://github.com/user-attachments/assets/5984f1ac-36c9-4280-aa8d-3e853f21ee16)
 
